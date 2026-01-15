@@ -11,6 +11,7 @@ import { AppService } from './app.service';
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
+      schema: process.env.DB_SCHEMA || 'public',
       entities: [User],
       synchronize: true, 
       ssl: { rejectUnauthorized: false }, 
